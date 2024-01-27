@@ -1,0 +1,22 @@
+@model TestePowerEmbedded.ViewModels.EmbeddedReportViewModel
+
+@{
+    ViewData["Title"] = "Report";
+}
+
+<div id="embed-container" style="height:800px;"></div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/powerbi-client/2.22.4/powerbi.min.js"></script>   
+
+    <script> 
+        var viewModel = {
+            reportId: "@Model.Id",
+            embedUrl: "@Model.EmbedUrl",
+            embedToken: "@Model.EmbedToken"
+        }; 
+    </script>
+    
+    <script src="~/js/embed.js"></script>
+}
+
